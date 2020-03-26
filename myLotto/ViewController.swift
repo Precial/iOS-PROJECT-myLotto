@@ -34,7 +34,30 @@ class ViewController: UIViewController {
     
     /* 버튼 연결 및 클릭시 동작 */
     @IBAction func runButton(_ sender: Any) {
+        
+        /* 버튼 클릭시 페이드 효과 주기 위해 초기 값 설정 */
+        totalPrint.alpha = 0
+        showPrint1.alpha = 0
+        showPrint2.alpha = 0
+        showPrint3.alpha = 0
+        showPrint4.alpha = 0
+        showPrint5.alpha = 0
+        showPrint6.alpha = 0
+        
         refrash() // 버튼클릭 할 때마다 로또 추첨 함수 불러오기
+        
+        /* 페이드 효과 주기 */
+        UIView.animate(withDuration:1.0,animations:({ // -> withDuration: 1.0 , 1.0 값은 나타나는 속도
+            self.totalPrint.alpha = 1
+            self.showPrint1.alpha = 1
+            self.showPrint2.alpha = 1
+            self.showPrint3.alpha = 1
+            self.showPrint4.alpha = 1
+            self.showPrint5.alpha = 1
+            self.showPrint6.alpha = 1
+            
+        }))
+        
     }
     
     func refrash(){
